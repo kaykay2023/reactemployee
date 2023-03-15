@@ -1,17 +1,11 @@
-import React from 'react'
+import React from "react";
 
-
-function Header(props) {
+function Header({ value }) {
   return (
-    
-    
-    <div className="skull">
-      
-      
-      {props.passedprop}
-
+    <div>
+      <div className="header">{value}</div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

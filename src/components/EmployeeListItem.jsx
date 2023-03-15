@@ -1,17 +1,29 @@
-import React from 'react'
+import React from "react";
 
-function EmployeeListItem(props) {
-
-
+function EmployeeListItem({
+  image,
+  empName,
+  position,
+  index,
+  returnedEmployeeIndex,
+}) {
   return (
-
-    <div className='staffBox'>
-
-     <h3>{props.individualWorker.name} </h3> 
-     <h5>{props.individualWorker.position} </h5> 
-      
+    <div
+      className="employe-item"
+      onClick={() => {
+        returnedEmployeeIndex(index);
+      }}
+    >
+      <div className="leftSide">
+        <img src={image} className="image-emp" alt="" />
       </div>
-  )
+
+      <div className="rightSide">
+        <div className="name-emp">{empName}</div>
+        <div className="position-emp">{position}</div>
+      </div>
+    </div>
+  );
 }
 
-export default EmployeeListItem
+export default EmployeeListItem;

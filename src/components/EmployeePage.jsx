@@ -1,13 +1,13 @@
-import React from 'react'
-import Header from './Header'
+import React from "react";
+import Header from "./Header";
 
-function EmployeePage(props) {
+function EmployeePage({ selectedEmployee }) {
   return (
-    <div className='epage'>
-        <Header passedprop={props.yourTitle}/>
-
+    <div className="employee-page">
+      <Header value="Employee" />
+      <div>{selectedEmployee?.name}</div>
     </div>
-  )
+  );
 }
 
-export default EmployeePage
+export default EmployeePage;

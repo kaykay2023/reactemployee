@@ -1,20 +1,20 @@
-import React from 'react'
-import EmployeeListItem from './EmployeeListItem'
-
-function EmployeeList(props) {
+import React from "react";
+import EmployeeListItem from "./EmployeeListItem";
+function EmployeeList({ listOfEmployees, returnedEmployeeIndex }) {
   return (
-
-    <div>
-
-<EmployeeListItem individualWorker={props.workers.james}/>
-      <EmployeeListItem individualWorker={props.workers.julie}/>
-      <EmployeeListItem individualWorker={props.workers.eugene}/>
-      <EmployeeListItem individualWorker={props.workers.john}/>
-      <EmployeeListItem individualWorker={props.workers.ray}/>
-      <EmployeeListItem individualWorker={props.workers.paul}/>
+    <div className="employee-list">
+      {listOfEmployees.map((emp, index) => (
+        <EmployeeListItem
+          returnedEmployeeIndex={returnedEmployeeIndex}
+          index={emp.id}
+          key={index}
+          image={emp.image}
+          empName={emp.name}
+          position={emp.position}
+        />
+      ))}
     </div>
-
-  )
+  );
 }
 
-export default EmployeeList
+export default EmployeeList;

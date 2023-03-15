@@ -1,20 +1,18 @@
+
 import React from 'react'
-import Header from './Header'
-import Searchbar from './Searchbar'
+import '../styles.css'
 import EmployeeList from './EmployeeList'
-
-
-
-function Homepage(props) {
+import Header from './Header'
+import SearchBar from './SearchBar'
+function HomePage({listOfEmployees,returnedEmployeeIndex}) {
   return (
-    <div className='hpage'>
-      
-      
-       <Header passedprop={props.yourTitle}/>
-       <Searchbar/>
-       <EmployeeList workers={props.staff}/>
+    <div className='home-page'>
+        <Header value="Employee Directory"/>
+        <SearchBar/>
+        <EmployeeList listOfEmployees = {listOfEmployees} returnedEmployeeIndex={returnedEmployeeIndex}/>
+    
     </div>
   )
 }
 
-export default Homepage
+export default HomePage
